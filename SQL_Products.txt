@@ -21,16 +21,16 @@ INSERT	INTO	Categories(cat_id, cat_name)	VALUES ('eyes',		'Глаза');
 INSERT	INTO	Categories(cat_id, cat_name)	VALUES ('lips',		'Губы');
 INSERT	INTO	Categories(cat_id, cat_name)	VALUES ('brows',	'Брови');
 
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(1,'Тени');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(2,'Тинт');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(3,'Гель для бровей');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(4,'Гель для умывания');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(5,'Хайлайтер');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(6,'Помада');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(7,'Тональный крем');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(8,'Консилер');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(9,'Скульптор');
-INSERT	INTO	Products(prod_id, prod_name)	VALUES	(10,'Тушь');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(1,	'Тени');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(2,	'Тинт');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(3,	'Гель для бровей');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(4,	'Гель для умывания');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(5,	'Хайлайтер');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(6,	'Помада');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(7,	'Тональный крем');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(8,	'Консилер');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(9,	'Скульптор');
+INSERT	INTO	Products(prod_id, prod_name)	VALUES	(10,	'Тушь');
 
 INSERT	INTO	Catalogue(product_id, category_id)	VALUES	(1, 'eyes');
 INSERT	INTO	Catalogue(product_id, category_id)	VALUES	(2, 'face');
@@ -49,10 +49,10 @@ INSERT	INTO	Catalogue(product_id, category_id)	VALUES	(10, 'eyes');
 
 SELECT	Products.prod_name + ' - ' + Categories.cat_name
 FROM	Products
-INNER JOIN		Catalogue	ON Products.prod_id			= Catalogue.product_id
-INNER JOIN		Categories	ON Catalogue.category_id	= Categories.cat_id;
+INNER JOIN	Catalogue	ON Products.prod_id = Catalogue.product_id
+INNER JOIN	Categories	ON Catalogue.category_id = Categories.cat_id;
 
 SELECT	Products.prod_name
 FROM	Products
-LEFT OUTER JOIN	Catalogue	ON Products.prod_id		= Catalogue.product_id
+LEFT OUTER JOIN	Catalogue	ON Products.prod_id = Catalogue.product_id
 WHERE	Catalogue.product_id	IS	NULL;
